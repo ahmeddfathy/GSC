@@ -1,0 +1,163 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first responsive design</title>
+    <link rel="stylesheet" href="second.css">
+     <!--  call bootstrap -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/bootstrap.min.css'%}">
+     <!-- call font awsomw -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/all.min.css'%}">
+     <!-- call roboro from google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font heboo link from ggole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Cairo:wght@200;300&family=Heebo:wght@100;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+
+  .container1 {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+
+    margin-bottom: 20px;
+  }
+
+  .question {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .answer {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+
+
+</style>
+</head>
+<body style="background-color: whitesmoke;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">G<span style="color: red; margin: 0px; padding: 0px;">s</span>C </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'ecommere' %}">St<span style="color: red;">o</span>re</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'support' %}"  style="cursor: pointer;" tabindex="-1" >support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'chatbot' %}"  style="cursor: pointer;" tabindex="-1" >sensor sys</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid" style="margin-top: 40px; ">
+    <div class="row" >
+        <div class="col-12 col-md-4" >
+          <h1>G<span style="color: red; margin: 0px; padding: 0px;">a</span>s se<span style="color: red;">n</span>sor Com<span style="color: red;">p</span>any</h1>
+          <h1>it will make</h1>
+          <h1>O<span style="color: red; margin: 0px; padding: 0px;">u</span>R Li<span style="color: red; margin: 0px; padding: 0px;">F</span>e Sa<span style="color: red; margin: 0px; padding: 0px;">F</span>er </h1>
+          
+        </div>
+        <div class="col-12 col-md-8" >
+            <div class="row">
+                <div class="col-md-5 col-12" style="align-self: center;"><h1 style="display: inline; ">Chat <span style="color: red; margin: 0px; padding: 0px;">with</span> us </h1></div>
+                 <div class="col-md-7 col-12">
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    <textarea style="margin-top: 10px;" name="chat" id="" cols="33" rows="5" placeholder="write your message">
+
+                    </textarea>
+                 <button style="position: relative; top:-19px" type="submit" class="btn btn-outline-danger">submit</button>
+                </form>
+                </div>
+            </div>
+            
+         
+         
+          </div>
+
+    </div>    
+    
+   
+    <div class="container1">
+      {%for answer in answers%}
+      <div class="question" name="question" >
+        {{answer.answer}}
+      </div> 
+     
+      <div class="answer" name ="answer" > {{answer.question}}</div>
+   
+    </div>
+    {%endfor%}
+  
+
+
+  
+    <div class="row" style="margin-top: 100px;">
+      <div class="col-lg-4 col-12 col-md-4"> 
+          <h2 style="margin-top: 40px;">Facbook link</h2>
+          <a href="#">https://Facbook.com/gasCompany</a>
+      </div>
+      <div class="col-lg-4 col-12 col-md-4">
+          
+   <h2 style="margin-top: 40px;">Instgram link</h2>
+   <a href="#">https://Instgram.com/gasCompany</a> 
+      </div>
+      <div class="col-lg-4 col-12 col-md-4">
+          
+   <h2 style="margin-top: 40px;">WhatsApp</h2>
+   <span href="#">+1-255-521-14</span>
+      </div>
+  </div>
+     
+
+
+</div>
+</div>
+
+
+</div>
+    
+<script src="{%static 'bootstrap-5.3.0-dist/js/bootstrap.bundle.js'%}"></script>
+<script src="{%static 'bootstrap-5.3.0-dist/js/all.js'%}"></script>
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+})
+    </script>
+</body>
+</html>

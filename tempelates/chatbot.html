@@ -1,0 +1,242 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first responsive design</title>
+    <link rel="stylesheet" href="second.css">
+     <!--  call bootstrap -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/bootstrap.min.css'%}">
+     <!-- call font awsomw -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/all.min.css'%}">
+     <!-- call roboro from google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font heboo link from ggole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Cairo:wght@200;300&family=Heebo:wght@100;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,300&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    .chat-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .chat-bubble {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 15px;
+        display: inline-block;
+        max-width: 80%;
+        word-break: break-word;
+        animation: fadeInOut 0.5s ease-in-out;
+    }
+
+    .user-bubble {
+        background-color: #d1f2eb;
+        color: #333;
+        float: right;
+    }
+
+    .bot-bubble {
+        background-color: #ffcdd2;
+        color: #333;
+        float: left;
+    }
+
+    #userInput {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #007BFF;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    /* Animation for chat bubbles */
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(10px); }
+        50% { opacity: 1; }
+        100% { opacity: 0; transform: translateY(-10px); }
+    }
+</style>
+
+</head>
+<body style="background-color: whitesmoke;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">G<span style="color: red; margin: 0px; padding: 0px;">s</span>C </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'ecommere' %}">St<span style="color: red;">o</span>re</a>
+              </li>
+           
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'support' %}"  style="cursor: pointer;" tabindex="-1" >support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="{% url 'chatbot' %}"  style="cursor: pointer;" tabindex="-1" >sensor sys</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+<div class="container">
+    <div class="row" >
+        <div class="col-12">
+            <div class="chat-container" style="margin: 140px auto;">
+                <h1>Chatbot</h1>
+                <div id="chatbox"></div>
+                <input type="text" id="userInput" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row" style="justify-content: center;">
+      <div class="col-12" >
+        <div>
+            <h2 style="margin: 0 auto; text-align: center;  width: fit-content;">the <span style="color: red;">video</span>  showing <span style="color: red;">you</span > how <span style="color: red;">to</span> use <span style="color: red;">the</span> sensor</h2>
+            
+            <iframe width="60%" height="415"  style="margin: 20px  20%;" src="https://www.youtube.com/embed/MrMBxhioB7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+    
+     
+
+
+    <script>
+        // Function to create a new chat bubble
+        function createChatBubble(text, isUser) {
+            const chatbox = document.getElementById("chatbox");
+            const bubble = document.createElement("div");
+            bubble.classList.add("chat-bubble");
+            bubble.textContent = text;
+            if (isUser) {
+                bubble.classList.add("user-bubble");
+            } else {
+                bubble.classList.add("bot-bubble");
+            }
+            chatbox.appendChild(bubble);
+        }
+
+        // Function to remove all chat bubbles
+        function removeChatBubbles() {
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML = "";
+        }
+
+        // Check if the last response was from the bot
+        let isLastResponseFromBot = false;
+
+        // Function to send a user message and receive a bot response
+        function sendMessage() {
+            const userInput = document.getElementById("userInput").value;
+            document.getElementById("userInput").value = "";
+
+            createChatBubble(userInput, true);
+            respondToUser(userInput);
+        }
+
+        // Function to respond to the user's message
+        function respondToUser(userInput) {
+            // Remove previous chat bubbles
+            removeChatBubbles();
+    
+            // Check if the user input contains certain keywords
+            const isSmallFire = userInput.includes("حريق صغير");
+            const isBigFire = userInput.includes("حريق كبير");
+    
+            // Prepare the response based on the user input
+            let response;
+            if (isSmallFire) {
+                response = "عند التعامل مع حريق صغير، يمكنك اتباع هذه النصائح:\n" +
+                           "1. قم بإطفاء الحريق بواسطة الأواني المناسبة أو البطانيات الخاصة بإطفاء الحرائق الصغيرة.\n" +
+                           "2. لا تحاول إطفاء الحريق بالماء إذا كان ناتجًا عن زيت أو كهرباء.";
+            } else if (isBigFire) {
+                response = "لقد قمنا بطلب المطافي. يرجى الابتعاد عن مكان الحريق وتأكد من عدم وجود أشياء تعيق وصول فرق الإطفاء.";
+            } else if (/^\d+$/.test(userInput)) {
+                const numberInput = parseInt(userInput);
+                if (numberInput < 30) {
+                    response = "اهلا عزيزي المستخدم، شات شركة حساسات الغاز سعيد بمساعدتك";
+                    response += "\nلا يوجد تسريب.";
+                } else if (numberInput > 40) {
+                    response = "هناك تسريب كبير يرجى إبلاغ الصيانة في أسرع وقت.";
+                } else {
+                    response = "هناك تسريب غاز.";
+                }
+            } else {
+                response = "اهلا انا شات بوت تمت برمجته بواسطه احمد فتحي كيف يمكنني مساعدتك";
+            }
+
+     
+          
+
+
+
+            // Display the response in the chatbox after 3 seconds delay
+            setTimeout(function() {
+                createChatBubble(response, false);
+            }, 2000);
+    
+            // Update the last response status
+            isLastResponseFromBot = true;
+        }
+    
+    </script>
+
+    <script src="{%static 'bootstrap-5.3.0-dist/js/bootstrap.bundle.js'%}"></script>
+<script src="{%static 'bootstrap-5.3.0-dist/js/all.js'%}"></script>
+    
+
+    
+</body>
+</html>
+

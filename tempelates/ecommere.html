@@ -1,0 +1,1075 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first responsive design</title>
+    <link rel="stylesheet" href="second.css">
+     <!--  call bootstrap -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/bootstrap.min.css'%}">
+     <!-- call font awsomw -->
+     <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/all.min.css'%}">
+     <!-- call roboro from google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font heboo link from ggole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Cairo:wght@200;300&family=Heebo:wght@100;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+
+  @media (max-width:850px){
+    .f-card{
+   
+      margin: 20px auto;
+      width: 100% !important;
+
+    }
+    #ahmed{
+      width: 100% !important;
+      margin-top: 30px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  @media (width:1024px){
+    .f-card{
+   
+      width: 14rem !important;
+
+    }
+  }
+</style>
+</head>
+<body style="background-color: whitesmoke;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">G<span style="color: red; margin: 0px; padding: 0px;">s</span>C </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'ecommere' %}">St<span style="color: red;">o</span>re</a>
+          </li>
+    
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'support' %}"  style="cursor: pointer;" tabindex="-1" >support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'chatbot' %}"  style="cursor: pointer;" tabindex="-1" >sensor sys</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-danger" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+          <h1>G<span style="color: red; margin: 0px; padding: 0px;">s</span>C Sto<span style="color: red;">r</span>e</h1>
+          <h1>buy to be safe</h1>
+          <h1>B<span style="color: red; margin: 0px; padding: 0px;">u</span>Y at <span style="color: red; margin: 0px; padding: 0px;">the</span> cheapest <span style="color: red; margin: 0px; padding: 0px;">price</span> </h1>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+            <img id="ahmed" style="width: 70%; margin: 0px auto; height: 300px;" src="https://ae01.alicdn.com/kf/HTB1Q_o5KeySBuNjy1zdq6xPxFXa5/Combustible-Natural-Gas-Detector-Portable-Gas-Leak-Detector-Tester-with-Sound-Light-Alarm-Gas-Sniffer.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="row" style="display: flex; justify-content: space-between; margin-top: 40px;">
+        <div class="col-12 col-md-6 col-lg-3" >
+
+            <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.zUarIQ8qeFUArseFKBbomAHaJl?w=141&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>100 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+</div>
+        </div>    
+        <div class="col-12 col-md-6 col-lg-3">
+           <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.DacILtstgiydehrNSfSL_wHaHa?w=184&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>200 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;"src='https://th.bing.com/th/id/OIP.dDrf4o_bYEukL9-bdqaovwHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>400 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+  
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                             <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.3LshitAA857QezzLt-LeVQHaHJ?w=191&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>10<span style="color: red; margin: 0px; padding: 0px;">0</span>0 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    buy
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+          <div style="margin-bottom: 10px;">
+            <label for="">name</label>
+            <input style="margin-left: 16px;" type="text" name="username">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="">address</label>
+            <input type="text" name="address">
+          </div>
+          <div>
+            <label style="margin-bottom: 20px;" for="">number</label>
+            <input type="number" name="number">
+          </div>
+          <div>
+            <label for="">color</label>
+            <select name="color" id="" >
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+            </select>
+          </div>
+          <div>
+          
+          </div>
+        
+        </div>
+    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+        </div>
+    </div>
+
+
+    
+    <div class="row" style="display: flex; justify-content: space-between; margin-top: 40px;">
+        <div class="col-12 col-md-6 col-lg-3" >
+
+            <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>100 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+</div>
+        </div>    
+        <div class="col-12 col-md-6 col-lg-3">
+           <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>200 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;"src='https://m.media-amazon.com/images/I/51bWZF3fh5L._AC_SS450_.jpg' class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>400 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+  
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                             <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.9MdufbOirMbyLOsiVVJBJQHaE8?pid=ImgDet&rs=1" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>10<span style="color: red; margin: 0px; padding: 0px;">0</span>0 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    buy
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade"  data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+          <div style="margin-bottom: 10px;">
+            <label for="">name</label>
+            <input style="margin-left: 16px;" type="text" name="username">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="">address</label>
+            <input type="text" name="address">
+          </div>
+          <div>
+            <label style="margin-bottom: 20px;" for="">number</label>
+            <input type="number" name="number">
+          </div>
+          <div>
+            <label for="">color</label>
+            <select name="color" id="" >
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="submit">
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+        </div>
+    </div>
+
+
+
+    
+    <div class="row" style="display: flex; justify-content: space-between; margin-top: 40px;">
+        <div class="col-12 col-md-6 col-lg-3" >
+
+            <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.oRu1ryE5WJlBuBg28F-vSgHaHa?pid=ImgDet&w=550&h=550&rs=1" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>100 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+</div>
+        </div>    
+        <div class="col-12 col-md-6 col-lg-3">
+           <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://i5.walmartimages.com/asr/c32544df-5835-46c9-9b44-5705062a9e91.2230d9fe0cd7baf0898209f0a0603ce3.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>200 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;"src='https://4.imimg.com/data4/GW/SB/MY-24265066/leak-detector-500x500.jpg' class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>400 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+  
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                             <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.LH7uP3vunTBTaxxU0qpFOgHaHa?pid=ImgDet&w=800&h=800&rs=1" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>10<span style="color: red; margin: 0px; padding: 0px;">0</span>0 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    buy
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+          <div style="margin-bottom: 10px;">
+            <label for="">name</label>
+            <input style="margin-left: 16px;" type="text" name="username">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="">address</label>
+            <input type="text" name="address">
+          </div>
+          <div>
+            <label style="margin-bottom: 20px;" for="">number</label>
+            <input type="number" name="number">
+          </div>
+          <div>
+            <label for="">color</label>
+            <select name="color" id="" >
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+            </select>
+          </div>
+          <div>
+          
+          </div>
+        
+        </div>
+    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+        </div>
+    </div>
+
+    <div class="row" style="display: flex; justify-content: space-between; margin-top: 40px;">
+        <div class="col-12 col-md-6 col-lg-3" >
+
+            <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://i5.walmartimages.com/asr/253d2823-d103-4717-9638-f3d6c2b7a920.b4856d1e64d14fc45aceda36c9af6fcd.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>100 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+</div>
+        </div>    
+        <div class="col-12 col-md-6 col-lg-3">
+           <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://i0.wp.com/m.media-amazon.com/images/I/41ZOqd5vPTL.jpg?w=700&ssl=1" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>200 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                      <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;"src='https://4.imimg.com/data4/GW/SB/MY-24265066/leak-detector-500x500.jpg' class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>400 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+  
+</div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+                             <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.LH7uP3vunTBTaxxU0qpFOgHaHa?pid=ImgDet&w=800&h=800&rs=1" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>10<span style="color: red; margin: 0px; padding: 0px;">0</span>0 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    buy
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+          <div style="margin-bottom: 10px;">
+            <label for="">name</label>
+            <input style="margin-left: 16px;" type="text" name="username">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="">address</label>
+            <input type="text" name="address">
+          </div>
+          <div>
+            <label style="margin-bottom: 20px;" for="">number</label>
+            <input type="number" name="number">
+          </div>
+          <div>
+            <label for="">color</label>
+            <select name="color" id="" >
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+            </select>
+          </div>
+          <div>
+          
+          </div>
+        
+        </div>
+    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+        </div>
+    </div>
+</div>
+    
+<script src="{%static 'bootstrap-5.3.0-dist/js/bootstrap.bundle.js'%}"></script>
+<script src="{%static 'bootstrap-5.3.0-dist/js/all.js'%}"></script>
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+})
+    </script>
+</body>
+</html>

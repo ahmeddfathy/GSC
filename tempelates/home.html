@@ -1,0 +1,351 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first responsive design</title>
+    <link rel="stylesheet" href="second.css">
+     <!--  call bootstrap -->
+    <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/bootstrap.min.css'%}">
+    <!-- call font awsomw -->
+    <link rel="stylesheet" href="{%static 'bootstrap-5.3.0-dist/css/all.min.css'%}">
+     <!-- call roboro from google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font heboo link from ggole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Cairo:wght@200;300&family=Heebo:wght@100;300;400;500;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+
+  @media (max-width:850px){
+    .f-card{
+   
+      margin: 20px auto;
+      width: 100% !important;
+
+    }
+    #ahmed{
+      width: 100% !important;
+      margin-top: 30px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+  @media (width:1024px){
+    .f-card{
+   
+      width: 14rem !important;
+
+    }
+  }
+</style>
+</head>
+<body style="background-color: whitesmoke;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">G<span style="color: red; margin: 0px; padding: 0px;">s</span>C </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ecommere' %}">St<span style="color: red;">o</span>re</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'support' %}"  style="cursor: pointer;" tabindex="-1" >support</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'chatbot' %}"  style="cursor: pointer;" tabindex="-1" >sensor sys</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-12 col-md-6">
+          <h1>G<span style="color: red; margin: 0px; padding: 0px;">a</span>s se<span style="color: red;">n</span>sor Com<span style="color: red;">p</span>any</h1>
+          <h1>it will make</h1>
+          <h1>O<span style="color: red; margin: 0px; padding: 0px;">u</span>R Li<span style="color: red; margin: 0px; padding: 0px;">F</span>e Sa<span style="color: red; margin: 0px; padding: 0px;">F</span>er </h1>
+          <div >   <button class="btn btn-danger">download app for android</button>
+         </div>
+            <div>
+              <button class="btn btn-dark">download app for ios</button>
+            </div>
+        
+        </div>
+        <div class="col-12 col-md-6">
+            <img id="ahmed" style="width: 70%; margin: 0px auto; height: 300px;" src="https://th.bing.com/th/id/R.67fe852e403812d06aa975a632c7bd57?rik=sEGpvk2nYfNaGw&pid=ImgRaw&r=0" alt="">
+        </div>
+
+    </div>
+    <div class="row" style="display: flex; justify-content: space-between; margin-top: 80px;">
+      <h2 style="text-align: center;">b<span style="color: red;">e</span>st se<span style="color: red;">ll</span>er</h2>
+        <div class="col-12 col-md-6 col-lg-3" >
+
+            <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.zUarIQ8qeFUArseFKBbomAHaJl?w=141&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>100 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+</div>
+        </div>    
+        <div  class="col-12 col-md-6 col-lg-3">
+           <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.DacILtstgiydehrNSfSL_wHaHa?w=184&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>200 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+
+</div>
+        </div>
+        <div c class="col-12 col-md-6 col-lg-3">
+                      <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;"src='https://th.bing.com/th/id/OIP.dDrf4o_bYEukL9-bdqaovwHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7' class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>400 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+            
+            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                buy
+              </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST">
+                        {% csrf_token %}
+                      <div style="margin-bottom: 10px;">
+                        <label for="">name</label>
+                        <input style="margin-left: 16px;" type="text" name="username">
+                      </div>
+                      <div style="margin-bottom: 10px;">
+                        <label for="">address</label>
+                        <input type="text" name="address">
+                      </div>
+                      <div>
+                        <label style="margin-bottom: 20px;" for="">number</label>
+                        <input type="number" name="number">
+                      </div>
+                      <div>
+                        <label for="">color</label>
+                        <select name="color" id="" >
+                            <option value="red">red</option>
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                        </select>
+                      </div>
+                      <div>
+                      
+                      </div>
+                    
+                    </div>
+                
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  </div>
+  
+</div>
+        </div>
+        <div c class="col-12 col-md-6 col-lg-3">
+                             <div class="card f-card" style="width: 18rem;">
+            <img style="height: 300px;" src="https://th.bing.com/th/id/OIP.3LshitAA857QezzLt-LeVQHaHJ?w=191&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h1>pri<span style="color: red; margin: 0px; padding: 0px;">c</span>e </h1>
+            <p>10<span style="color: red; margin: 0px; padding: 0px;">0</span>0 po<span style="color: red; margin: 0px; padding: 0px;">u</span>nd</p>
+           <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    buy
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" data-bs-backdrop="static" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="POST">
+            {% csrf_token %}
+          <div style="margin-bottom: 10px;">
+            <label for="">name</label>
+            <input style="margin-left: 16px;" type="text" name="username">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="">address</label>
+            <input type="text" name="address">
+          </div>
+          <div>
+            <label style="margin-bottom: 20px;" for="">number</label>
+            <input type="number" name="number">
+          </div>
+          <div>
+            <label for="">color</label>
+            <select name="color" id="" >
+                <option value="red">red</option>
+                <option value="black">black</option>
+                <option value="blue">blue</option>
+            </select>
+          </div>
+          <div>
+          
+          </div>
+        
+        </div>
+    
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+        </div>
+    </div>
+</div>       
+           
+    
+    <script src="{%static 'bootstrap-5.3.0-dist/js/bootstrap.bundle.js'%}"></script>
+    <script src="{%static 'bootstrap-5.3.0-dist/js/all.js'%}"></script>
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+})
+    </script>
+</body>
+</html>
